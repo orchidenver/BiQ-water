@@ -13,4 +13,8 @@
 
 .policy-text {
   padding: 0;
+  font-family: "StolzlLight";
+  color: #152236;
+  font-size: 14px;
+  line-height: 22px;
 }

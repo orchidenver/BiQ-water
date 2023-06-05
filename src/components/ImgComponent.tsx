@@ -17,6 +17,7 @@ export default function ImgComponent({
       src={link}
       alt={altText}
       className="img"
+      loading="lazy"
       style={{
         height: banner ? "100vh" : "auto",
         width: banner ? "100%" : "100vw",

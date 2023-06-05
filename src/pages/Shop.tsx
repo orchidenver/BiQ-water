@@ -118,10 +118,16 @@ export default function Shop() {
             </div>
           </div>
         </div>
+        <button className="cart-btn">
+          <div className="cart-btn-items">
+            <span>£11.2</span>
+            <span>Add to cart</span>
+          </div>
+        </button>
       </div>
+
       <ImgComponent link={logo} altText="logo" banner={false} />
       <Composition />
-      <Footer />
     </main>
   );
 }

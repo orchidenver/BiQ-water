@@ -21,13 +21,15 @@ export default function Composition() {
   return (
     <>
       <div className="container">
-        <div className="item">Countries of origin</div>
+        <div className="item item-bold" id="item-head">
+          Countries of origin
+        </div>
         <div className="item">Serbia</div>
       </div>
       <Divider />
       <div className="container">
         {compositionEls.map((el: string) => (
-          <div className="item">{el}</div>
+          <div className="item item-bold">{el}</div>
         ))}
       </div>
     </>

@@ -65,6 +65,17 @@
   margin: -20px 0 -20px 0;
 }
 
+.product-name {
+  font-family: "StolzlBold";
+  font-weight: 900;
+}
+
+.product-capacity {
+  font-family: "StolzlRegular";
+  font-weight: 400;
+  color: #15223680;
+}
+
 .product-img {
   height: 20vh;
   width: auto;
@@ -85,7 +96,8 @@
 .product-quantity {
   display: flex;
   justify-content: space-between;
-  width: 25vw;
+  align-items: center;
+  width: 30vw;
   border: 1px solid #000000;
   border-radius: 30px;
 }
@@ -95,6 +107,10 @@
   border-radius: 50%;
   background-color: transparent;
   cursor: pointer;
+  font-family: "StolzlRegular";
+  font-weight: 400;
+  color: #152236;
+  font-size: 20px;
 }
 
 .product-actions {
@@ -102,6 +118,13 @@
   flex-direction: column;
   justify-content: space-evenly;
   height: 100%;
+}
+
+.product-price,
+.amount {
+  font-family: "StolzlRegular";
+  font-weight: 400;
+  color: #152236;
 }
 
 .product-remove {
@@ -128,7 +151,7 @@
 }
 
 .checkout-btn {
-  width: 80%;
+  width: 90%;
   height: 5vh;
   background-color: #91979b;
   border-width: 1px;
@@ -136,6 +159,14 @@
   color: #ffffff;
   border-color: transparent;
   margin-top: 10px;
+  font-family: "StolzlRegular";
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.checkout-summary {
+  font-family: "StolzlRegular";
+  font-weight: 400;
 }
 
 .checkout-btn:hover {

@@ -20,7 +20,7 @@ export default function Footer() {
         <input type="submit" value="Send" />
       </form>
       <Divider color="#ffffff" margin="20px 0" />
-      <p>Be quality water</p>
+      <p className="footer-head">Be quality water</p>
       <Divider color="#ffffff" margin="20px 0" />
       <p className="ref">BiQ © 2023</p>
       <p className="ref">All rights reserved.</p>

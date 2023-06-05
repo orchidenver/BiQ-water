@@ -1,4 +1,3 @@
-import * as React from "react";
 import Divider from "./Divider";
 
 import bottleImg from "../assets/bottle-shop-small.jpg";

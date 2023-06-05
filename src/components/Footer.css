@@ -7,6 +7,9 @@
   text-align: center;
   padding: 0;
   margin: 0;
+  font-weight: 400;
+  font-size: 16px;
+  color: #ffffff;
 }
 
 h2 {
@@ -29,10 +32,15 @@ input[type="email"] {
   border: 1px solid #ffffff;
   border-radius: 72px;
   padding: 0 20px 0 20px;
+  color: #ffffff;
+  font-family: "StolzlLight";
+  font-weight: 300;
 }
 
 input[type="email"]::placeholder {
   color: #ffffff;
+  font-family: "StolzlLight";
+  font-weight: 300;
 }
 
 textarea {
@@ -41,10 +49,15 @@ textarea {
   border-radius: 19px;
   padding: 20px;
   margin-bottom: 20px;
+  color: #ffffff;
+  font-family: "StolzlLight";
+  font-weight: 300;
 }
 
 textarea::placeholder {
   color: #ffffff;
+  font-family: "StolzlLight";
+  font-weight: 400;
 }
 
 input[type="submit"] {
@@ -54,12 +67,27 @@ input[type="submit"] {
   border-color: transparent;
   border-radius: 72px;
   cursor: pointer;
+  font-family: "StolzlRegular";
+  font-weight: 400;
+  font-size: 18px;
 }
 
 input[type="submit"]:hover {
   background-color: #4a4d4f;
+  color: #ffffff;
 }
 
 input[type="submit"]:focus {
   background-color: #4a4d4f;
+  color: #ffffff;
+}
+
+.footer-head {
+  font-family: "StolzlRegular";
+  font-weight: 400;
+  font-size: 36px;
+  color: #ffffff;
+  text-align: center;
+  padding: 0;
+  margin: 10px 0;
 }

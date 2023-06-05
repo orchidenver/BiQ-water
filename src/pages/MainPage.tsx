@@ -10,6 +10,7 @@ import "./MainPage.css";
 import productImg from "../assets/product-example.jpg";
 import productImg2 from "../assets/product-example-2.jpg";
 import logo from "../assets/logo.jpg";
+import promo from "../assets/promo.jpg";
 
 export default function MainPage() {
   return (
@@ -18,16 +19,31 @@ export default function MainPage() {
       <div className="moto">
         <h1>BE QUALITY WATER</h1>
       </div>
+      <ImgComponent link={promo} altText="promo" banner={false} />
       <Divider />
       <TextBlock header="Still from nature yet packed">
-        The world is re-evaluating the mindset of living, striving for purity in
-        both mental and physical existence. The global aim of progress extends
-        beyond the improvement of the universe, but to preserve it to return
-        natural quality of life. Still, water is essential as: • Quality of
-        water influences all spheres of human existence• Still water is balanced
-        right for nature beings • Still water is empowered with the purity of
-        deep sourcesGet closer to your original natural state with still water
-        bottled straight from the source.
+        {
+          <>
+            <p className="list-block-paragraph">
+              The world is re-evaluating the mindset of living, striving for
+              purity in both mental and physical existence. The global aim of
+              progress extends beyond the improvement of the universe, but to
+              preserve it to return natural quality of life. Still, water is
+              essential as:
+            </p>
+            <ul>
+              <li>
+                Quality of water influences all spheres of human existence
+              </li>
+              <li>Still water is balanced right for nature beings</li>
+              <li>Still water is empowered with the purity of deep sources</li>
+            </ul>
+            <p className="list-block-paragraph">
+              Get closer to your original natural state with still water bottled
+              straight from the source.
+            </p>
+          </>
+        }
       </TextBlock>
       <Divider />
       <TextBlock header="All in one bottle">
@@ -66,7 +82,7 @@ to keep untouched"
         environmentally friendly.
       </TextBlock>
       <ImgComponent link={productImg2} altText="water" banner={false} />
-      <div className="product-info">
+      <div className="product-section">
         <div className="product-info-block">
           <span className="product-info-item bold">Still water</span>
           <span className="product-info-item gray">0.3/0.7/1L</span>
@@ -77,7 +93,6 @@ to keep untouched"
       </div>
       <ImgComponent link={logo} altText="logo" banner={false} />
       <Composition />
-      <Footer />
     </>
   );
 }

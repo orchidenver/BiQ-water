@@ -5,6 +5,9 @@
   border-color: transparent;
   border-radius: 72px;
   cursor: pointer;
+  font-family: "StolzlRegular";
+  font-weight: 400;
+  font-size: 16px;
 }
 
 .button:hover {
@@ -18,4 +21,7 @@
 .button-banner {
   position: absolute;
   margin-bottom: 100px;
+  font-family: "StolzlRegular";
+  font-weight: 400;
+  font-size: 20px;
 }

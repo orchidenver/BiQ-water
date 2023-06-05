@@ -1,16 +1,54 @@
-import * as React from "react";
+import { useLocation } from "react-router-dom";
+
 import Button from "./Button";
 import ImgComponent from "./ImgComponent";
-import "./Banner.css";
 import bg from "../assets/bg-main.jpg";
+import bg2 from "../assets/bg-main2.jpg";
+import bg3 from "../assets/bg-main3.jpg";
+import bg4 from "../assets/bg-main4.jpg";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, A11y } from "swiper";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "./Banner.css";
 
 export default function Banner() {
+  const location = useLocation();
+
+  const swiper: JSX.Element = (
+    <Swiper
+      pagination={{
+        renderBullet: function (index, className) {
+          return '<span class="' + className + '">' + "" + "</span>";
+        },
+      }}
+      navigation={true}
+      modules={[Navigation, Pagination, A11y]}
+      className="mySwiper"
+    >
+      {[bg2, bg3, bg4].map((img: string, i: number) => {
+        return (
+          <SwiperSlide key={`slide-${i}`}>
+            <ImgComponent link={img} altText="banner" banner={true} />
+          </SwiperSlide>
+        );
+      })}
+    </Swiper>
+  );
   return (
     <aside className="banner">
-      <ImgComponent link={bg} altText="banner" banner={true} />
-      <Button width="35vw" height={50} component="banner">
-        Buy now
-      </Button>
+      {location.pathname === "/shop" ? (
+        swiper
+      ) : (
+        <ImgComponent link={bg} altText="banner" banner={true} />
+      )}
+      {location.pathname === "/shop" ? null : (
+        <Button width="35vw" height={50} component="banner">
+          Buy now
+        </Button>
+      )}
     </aside>
   );
 }

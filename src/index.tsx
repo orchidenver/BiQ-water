@@ -10,7 +10,9 @@ import Page404 from "./pages/Page404";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import Policy from "./pages/Policy";
-import Cookie from "./pages/Cookie";
+import Cookies from "./pages/Cookies";
+
+import "./fonts/nexa-heavy.ttf";
 
 function Layout() {
   return (
@@ -41,8 +43,8 @@ const router = createBrowserRouter([
         element: <Policy />,
       },
       {
-        path: "cookie",
-        element: <Cookie />,
+        path: "cookies",
+        element: <Cookies />,
       },
     ],
   },

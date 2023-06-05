@@ -1,6 +1,8 @@
 h1 {
   text-align: center;
   width: 150px;
+  font-family: "StolzlBold";
+  font-weight: 900;
 }
 
 p {
@@ -18,18 +20,26 @@ p {
   width: 50%;
 }
 
-.product-info {
+.product-section {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  padding: 20px 30px;
+}
+
+.product-info-block {
+  display: flex;
+  flex-direction: column;
 }
 
 .bold {
-  display: block;
-  font-weight: bold;
+  font-family: "StolzlBold";
+  font-weight: 900;
 }
 .gray {
-  color: gray;
+  font-family: "StolzlRegular";
+  font-weight: 400;
+  color: #15223680;
 }
 
 .btns {

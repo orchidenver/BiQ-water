@@ -2,22 +2,30 @@
   padding: 20px;
 }
 
+.shop-items {
+  margin-top: 30px;
+}
+
 .shop-head {
   padding: 0;
   margin: 0;
   font-weight: 900;
   font-size: 40px;
+  font-family: "NexaHeavy";
+  font-weight: 900;
+  line-height: 40px;
 }
 
 .shop-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 15px;
 }
 
 .shop-product {
   font-weight: bold;
-  width: 80px;
+  width: 95px;
   margin: 0;
   padding: 0;
 }
@@ -32,8 +40,9 @@
 
 .shop-count {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  width: 65px;
 }
 
 .capacity-btns {
@@ -41,8 +50,8 @@
 }
 
 .capacity-btn {
-  width: 18vw;
-  height: 25px;
+  width: 17vw;
+  height: 30px;
   background-color: #ffffff;
   border-color: #91979b;
   color: #91979b;
@@ -58,6 +67,10 @@
   background-color: #91979b;
 }
 
+.capacity-btn + .capacity-btn {
+  margin-left: 15px;
+}
+
 .amount-btn {
   background-color: #ffffff;
   border-radius: 50%;
@@ -71,4 +84,33 @@
   font-weight: normal;
   font-size: 16px;
   margin: 0 5px 0 5px;
+}
+
+.cart-btn {
+  width: 100%;
+  height: 5vh;
+  background-color: #91979b;
+  border-width: 1px;
+  border-radius: 72px;
+  color: #ffffff;
+  border-color: transparent;
+  margin-top: 10px;
+  font-family: "StolzlRegular";
+  font-weight: 400;
+  font-size: 18px;
+  margin-top: 30px;
+}
+
+.cart-btn:hover {
+  background-color: #4a4d4f;
+}
+
+.cart-btn:focus {
+  background-color: #4a4d4f;
+}
+
+.cart-btn-items {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }

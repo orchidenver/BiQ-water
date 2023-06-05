@@ -2,7 +2,7 @@ import * as React from "react";
 import "./TextBlock.css";
 
 interface TextBlockProps {
-  children: string;
+  children: string | JSX.Element;
   header?: string;
 }
 

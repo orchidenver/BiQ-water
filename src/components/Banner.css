@@ -11,3 +11,34 @@
 .banner-img {
   object-fit: cover;
 }
+
+.banner .button-banner {
+  z-index: 3;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: #91979b;
+  font-size: 30px;
+}
+
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: transparent;
+  border: 2px solid #656769;
+  border-radius: 50%;
+}
+
+.swiper-pagination-bullet-active {
+  color: #fff;
+  background: #91979b;
+  border: 2px solid #91979b;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: 50px;
+}
