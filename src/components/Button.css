@@ -1,0 +1,21 @@
+.button {
+  background-color: #91979b;
+  color: #ffffff;
+  height: 50px;
+  border-color: transparent;
+  border-radius: 72px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #4a4d4f;
+}
+
+.button:focus {
+  background-color: #4a4d4f;
+}
+
+.button-banner {
+  position: absolute;
+  margin-bottom: 100px;
+}

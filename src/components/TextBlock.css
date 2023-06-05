@@ -1,0 +1,8 @@
+.text-block-header {
+  font-weight: bold;
+}
+
+.text-block-header,
+.text-block-paragraph {
+  padding: 10px 15px;
+}

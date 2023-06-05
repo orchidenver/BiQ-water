@@ -1,0 +1,52 @@
+h1 {
+  text-align: center;
+  width: 150px;
+}
+
+p {
+  padding: 10px 15px;
+}
+
+.img-demo {
+  height: auto;
+  width: auto;
+  max-width: 400px;
+  max-height: 700px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.product-info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.bold {
+  display: block;
+  font-weight: bold;
+}
+.gray {
+  color: gray;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.moto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

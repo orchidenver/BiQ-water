@@ -1,0 +1,147 @@
+.sidebar {
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffffff;
+  color: #333;
+  position: fixed;
+  z-index: 9;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  right: 0;
+  transform: translateX(100vw);
+  transition: all 0.2s;
+  padding-top: 10vh;
+}
+
+.sidebar.active {
+  transform: translateX(0);
+  overflow: hidden;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.sidebar a:hover {
+  color: #000;
+}
+
+.sidebar li:hover {
+  background-color: #e0e0e0;
+  border-radius: 5px;
+}
+
+.sidebar li.active {
+  background-color: #ccc;
+  border-radius: 5px;
+}
+
+.sidebar ul ul {
+  margin-left: 10px;
+}
+
+.sidebar ul ul li {
+  margin-bottom: 5px;
+}
+
+.product {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+  height: 25vh;
+  margin: -20px 0 -20px 0;
+}
+
+.product-img {
+  height: 20vh;
+  width: auto;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+}
+
+.product-info p {
+  margin: 0;
+  padding: 0;
+}
+
+.product-quantity {
+  display: flex;
+  justify-content: space-between;
+  width: 25vw;
+  border: 1px solid #000000;
+  border-radius: 30px;
+}
+
+.product-amount-btn {
+  border-color: transparent;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.product-actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+}
+
+.product-remove {
+  background-color: transparent;
+  border: transparent;
+  height: 10vh;
+  cursor: pointer;
+}
+
+.product-remove img {
+  height: 20px;
+  width: auto;
+}
+
+.checkout {
+  height: 15vh;
+  width: 100vw;
+  position: absolute;
+  bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkout-btn {
+  width: 80%;
+  height: 5vh;
+  background-color: #91979b;
+  border-width: 1px;
+  border-radius: 72px;
+  color: #ffffff;
+  border-color: transparent;
+  margin-top: 10px;
+}
+
+.checkout-btn:hover {
+  background-color: #4a4d4f;
+}
+
+.checkout-btn:focus {
+  background-color: #4a4d4f;
+}
