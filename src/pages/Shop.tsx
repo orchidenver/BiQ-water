@@ -1,16 +1,31 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Banner from "../components/Banner";
 import Composition from "../components/Composition";
 import Footer from "../components/Footer";
 import ImgComponent from "../components/ImgComponent";
 import Divider from "../components/Divider";
 import logo from "../assets/logo.jpg";
+import { useCartContext } from "../context/cartContext";
 
 import "./Shop.css";
 
 export default function Shop() {
-  const [bottleAmount, setBottleAmount] = useState(1);
-  const [boxAmount, setBoxAmount] = useState(1);
+  const {
+    cart: { bottles, boxes },
+    totalCartSum,
+    updateOrder,
+    calcTotalSumPerProduct,
+    updateCapacity,
+  } = useCartContext();
+  const [bottleAmount, setBottleAmount] = useState(bottles.quantity);
+  const [boxAmount, setBoxAmount] = useState(boxes.quantity);
+
+  useEffect(() => {
+    updateOrder(bottleAmount, "bottles");
+    calcTotalSumPerProduct("bottles");
+    updateOrder(boxAmount, "boxes");
+    calcTotalSumPerProduct("boxes");
+  }, [boxAmount, bottleAmount]);
 
   function increaseBottle() {
     setBottleAmount((prevState) => {
@@ -28,8 +43,8 @@ export default function Shop() {
     setBottleAmount((prevState) => {
       let tempAmount = prevState - 1;
 
-      if (tempAmount < 1) {
-        tempAmount = 1;
+      if (tempAmount < 0) {
+        tempAmount = 0;
       }
 
       return tempAmount;
@@ -47,13 +62,12 @@ export default function Shop() {
       return tempAmount;
     });
   }
-
   function decreaseBox() {
     setBoxAmount((prevState) => {
       let tempAmount = prevState - 1;
 
-      if (tempAmount < 1) {
-        tempAmount = 1;
+      if (tempAmount < 0) {
+        tempAmount = 0;
       }
 
       return tempAmount;
@@ -67,9 +81,48 @@ export default function Shop() {
         <p className="shop-head">STILL</p>
         <p className="shop-head">WATER</p>
         <div className="capacity-btns">
-          <button className="capacity-btn">0.3L</button>
-          <button className="capacity-btn">0.7L</button>
-          <button className="capacity-btn">1.0L</button>
+          <button
+            className={`${
+              bottles.capacity === "0.3"
+                ? "capacity-btn active"
+                : "capacity-btn"
+            }`}
+            onClick={(e) =>
+              updateCapacity(
+                (e.target as HTMLElement).textContent?.slice(0, -1)
+              )
+            }
+          >
+            0.3L
+          </button>
+          <button
+            className={`${
+              bottles.capacity === "0.7"
+                ? "capacity-btn active"
+                : "capacity-btn"
+            }`}
+            onClick={(e) =>
+              updateCapacity(
+                (e.target as HTMLElement).textContent?.slice(0, -1)
+              )
+            }
+          >
+            0.7L
+          </button>
+          <button
+            className={`${
+              bottles.capacity === "1.0"
+                ? "capacity-btn active"
+                : "capacity-btn"
+            }`}
+            onClick={(e) =>
+              updateCapacity(
+                (e.target as HTMLElement).textContent?.slice(0, -1)
+              )
+            }
+          >
+            1.0L
+          </button>
         </div>
         <div className="shop-items">
           <div className="shop-item">
@@ -83,7 +136,7 @@ export default function Shop() {
               >
                 -
               </button>
-              <h2 className="amount">{bottleAmount}</h2>
+              <h2 className="amount">{bottles.quantity}</h2>
               <button
                 type="button"
                 className="amount-btn"
@@ -107,7 +160,7 @@ export default function Shop() {
               >
                 -
               </button>
-              <h2 className="amount">{boxAmount}</h2>
+              <h2 className="amount">{boxes.quantity}</h2>
               <button
                 type="button"
                 className="amount-btn"
@@ -120,7 +173,7 @@ export default function Shop() {
         </div>
         <button className="cart-btn">
           <div className="cart-btn-items">
-            <span>£11.2</span>
+            <span>{`£${totalCartSum.toFixed(1)}`}</span>
             <span>Add to cart</span>
           </div>
         </button>

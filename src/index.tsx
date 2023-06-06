@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-// import { CartProvider } from "./context/cartContext";
+import { CartProvider } from "./context/cartContext";
 import MainPage from "./pages/MainPage";
 import Shop from "./pages/Shop";
 import Page404 from "./pages/Page404";
@@ -55,9 +55,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    {/* <CartProvider> */}
-    <RouterProvider router={router} />
-    {/* </CartProvider> */}
+    <CartProvider>
+      <RouterProvider router={router} />
+    </CartProvider>
   </React.StrictMode>
 );
 
