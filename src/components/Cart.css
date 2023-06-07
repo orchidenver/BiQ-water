@@ -176,3 +176,7 @@
 .checkout-btn:focus {
   background-color: #4a4d4f;
 }
+
+.checkout-btn:disabled {
+  background-color: #aab3b8;
+}

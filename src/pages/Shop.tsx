@@ -18,6 +18,7 @@ export default function Shop() {
     increaseBox,
     decreaseBox,
     decreaseBottle,
+    openCart,
   } = useAppContext();
 
   return (
@@ -117,7 +118,7 @@ export default function Shop() {
             </div>
           </div>
         </div>
-        <button className="cart-btn">
+        <button className="cart-btn" onClick={openCart}>
           <div className="cart-btn-items">
             <span>{`£${totalCartSum.toFixed(1)}`}</span>
             <span>Add to cart</span>

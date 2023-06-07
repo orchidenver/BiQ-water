@@ -52,6 +52,7 @@ textarea {
   color: #ffffff;
   font-family: "StolzlLight";
   font-weight: 300;
+  resize: none;
 }
 
 textarea::placeholder {
@@ -79,6 +80,11 @@ input[type="submit"]:hover {
 
 input[type="submit"]:focus {
   background-color: #4a4d4f;
+  color: #ffffff;
+}
+
+input[type="submit"]:disabled {
+  background-color: #aab3b8;
   color: #ffffff;
 }
 

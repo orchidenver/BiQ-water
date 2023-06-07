@@ -1,8 +1,9 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
 import "./Button.css";
 
 interface ButtonInterface {
-  children: string;
+  children: string | JSX.Element;
   width: number | string;
   height: number | string;
   component?: string;
@@ -15,11 +16,12 @@ export default function Button({
   height,
 }: ButtonInterface) {
   return (
-    <button
+    <Link
+      to="shop"
       className={`button ${component ? "button-banner" : null}`}
       style={{ width: width, height: height }}
     >
       {children}
-    </button>
+    </Link>
   );
 }

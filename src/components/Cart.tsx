@@ -40,6 +40,7 @@ export default function Cart({ open }: CartProps) {
     decreaseBox,
     decreaseBottle,
   } = useAppContext();
+  const [openModal, setOpenModal] = useState<boolean>(false);
 
   return (
     <div className={open ? "sidebar active" : "sidebar"}>
@@ -130,11 +131,18 @@ export default function Cart({ open }: CartProps) {
         <div className="checkout-summary">{`Place an order £${totalCartSum.toFixed(
           1
         )}`}</div>
-        <button className="checkout-btn" onClick={resetOrder}>
+        <button
+          className="checkout-btn"
+          onClick={() => {
+            resetOrder();
+            setOpenModal(true);
+          }}
+          disabled={bottles.quantity === 0 && boxes.quantity === 0}
+        >
           Checkout
         </button>
       </div>
-      <Modal />
+      <Modal open={openModal} onClose={() => setOpenModal(false)} />
     </div>
   );
 }

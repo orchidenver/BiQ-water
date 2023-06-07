@@ -11,7 +11,7 @@ export interface NavBar {}
 export default function NavBar(props: NavBar) {
   const [menuVisible, setMenuVisible] = useState<boolean>(false);
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
-  const { changeLang, lang } = useAppContext();
+  const { changeLang, lang, cartVisible, openCart } = useAppContext();
 
   function menuHandler() {
     setMenuOpen((prevState) => !prevState);
@@ -35,18 +35,15 @@ export default function NavBar(props: NavBar) {
           </div>
         )}
         <img src={logo} alt="logo" />
-        <button
-          className="cart"
-          onClick={() => setMenuVisible((prevState) => !prevState)}
-        >
+        <button className="cart" onClick={openCart}>
           <img
             className="cart-img"
-            src={!menuVisible ? shop : close}
+            src={!cartVisible ? shop : close}
             alt="cart"
           />
         </button>
       </nav>
-      <Cart open={menuVisible} />
+      <Cart open={cartVisible} />
     </div>
   );
 }

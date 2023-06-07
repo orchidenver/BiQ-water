@@ -1,14 +1,44 @@
-import * as React from "react";
+import { useState } from "react";
 import Divider from "./Divider";
+import emailjs from "@emailjs/browser";
 import "./Footer.css";
 
 export default function Footer() {
+  const [footerEmailValue, setFooterEmailValue] = useState<
+    string | number | readonly string[] | undefined
+  >("");
+  const [footerTextValue, setFooterTextValue] = useState<
+    string | number | readonly string[] | undefined
+  >("");
+
+  function onSubmitHandler(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+
+    // emailjs.sendForm(
+    //   "YOUR_SERVICE_ID",
+    //   "YOUR_TEMPLATE_ID",
+    //   footerEmailValue,
+    //   "YOUR_PUBLIC_KEY"
+    // );
+
+    setFooterTextValue("");
+    setFooterEmailValue("");
+  }
+
+  const enabled: boolean = !!footerTextValue && !!footerEmailValue;
+
   return (
     <footer className="footer">
       <h2>Contact us</h2>
-      <form>
+      <form onSubmit={onSubmitHandler}>
         <label htmlFor="email">Email</label>
-        <input type="email" id="email" placeholder="Enter your e-mail" />
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter your e-mail"
+          value={footerEmailValue}
+          onChange={(e) => setFooterEmailValue(e.target.value)}
+        />
         <label htmlFor="question">Question</label>
         <textarea
           name="question"
@@ -16,8 +46,12 @@ export default function Footer() {
           placeholder="Enter your question"
           cols={30}
           rows={7}
+          value={footerTextValue}
+          onChange={(e) => setFooterTextValue(e.target.value)}
+          minLength={30}
+          maxLength={100}
         ></textarea>
-        <input type="submit" value="Send" />
+        <input type="submit" value="Send" disabled={!enabled} />
       </form>
       <Divider color="#ffffff" margin="20px 0" />
       <p className="footer-head">Be quality water</p>
