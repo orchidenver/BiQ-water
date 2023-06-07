@@ -13,66 +13,12 @@ export default function Shop() {
   const {
     cart: { bottles, boxes },
     totalCartSum,
-    updateOrder,
-    calcTotalSumPerProduct,
     updateCapacity,
+    increaseBottle,
+    increaseBox,
+    decreaseBox,
+    decreaseBottle,
   } = useCartContext();
-  const [bottleAmount, setBottleAmount] = useState(bottles.quantity);
-  const [boxAmount, setBoxAmount] = useState(boxes.quantity);
-
-  useEffect(() => {
-    updateOrder(bottleAmount, "bottles");
-    calcTotalSumPerProduct("bottles");
-    updateOrder(boxAmount, "boxes");
-    calcTotalSumPerProduct("boxes");
-  }, [boxAmount, bottleAmount]);
-
-  function increaseBottle() {
-    setBottleAmount((prevState) => {
-      let tempAmount = prevState + 1;
-
-      if (tempAmount > 9) {
-        tempAmount = 9;
-      }
-
-      return tempAmount;
-    });
-  }
-
-  function decreaseBottle() {
-    setBottleAmount((prevState) => {
-      let tempAmount = prevState - 1;
-
-      if (tempAmount < 0) {
-        tempAmount = 0;
-      }
-
-      return tempAmount;
-    });
-  }
-
-  function increaseBox() {
-    setBoxAmount((prevState) => {
-      let tempAmount = prevState + 1;
-
-      if (tempAmount > 9) {
-        tempAmount = 9;
-      }
-
-      return tempAmount;
-    });
-  }
-  function decreaseBox() {
-    setBoxAmount((prevState) => {
-      let tempAmount = prevState - 1;
-
-      if (tempAmount < 0) {
-        tempAmount = 0;
-      }
-
-      return tempAmount;
-    });
-  }
 
   return (
     <main>

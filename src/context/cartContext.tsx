@@ -30,6 +30,10 @@ interface InitialStateInterface {
   resetOrder: () => void;
   calcTotalSumPerProduct: (product: string) => void;
   updateCapacity: (capacity: string | undefined) => void;
+  increaseBottle: () => void;
+  increaseBox: () => void;
+  decreaseBottle: () => void;
+  decreaseBox: () => void;
 }
 
 function getLocalStorage() {
@@ -66,6 +70,10 @@ const CartContext = createContext<InitialStateInterface>({
   resetOrder: () => {},
   calcTotalSumPerProduct: (product: string) => {},
   updateCapacity: (capacity: string | undefined) => {},
+  increaseBottle: () => {},
+  increaseBox: () => {},
+  decreaseBox: () => {},
+  decreaseBottle: () => {},
 });
 
 export const CartProvider = ({ children }: CartProviderInterface) => {
@@ -74,6 +82,13 @@ export const CartProvider = ({ children }: CartProviderInterface) => {
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
+
+  useEffect(() => {
+    updateOrder(cart.bottles.quantity, "bottles");
+    calcTotalSumPerProduct("bottles");
+    updateOrder(cart.boxes.quantity, "boxes");
+    calcTotalSumPerProduct("boxes");
+  }, [cart.bottles.quantity, cart.boxes.quantity]);
 
   function resetOrder() {
     setCart({
@@ -91,6 +106,78 @@ export const CartProvider = ({ children }: CartProviderInterface) => {
         price: 9.6,
         totalSum: 0,
       },
+    });
+  }
+
+  function increaseBottle() {
+    setCart((prevState) => {
+      let tempAmount = prevState.bottles.quantity + 1;
+
+      if (tempAmount > 9) {
+        tempAmount = 9;
+      }
+
+      return {
+        ...prevState,
+        bottles: {
+          ...prevState.bottles,
+          quantity: tempAmount,
+        },
+      };
+    });
+  }
+
+  function decreaseBottle() {
+    setCart((prevState) => {
+      let tempAmount = prevState.bottles.quantity - 1;
+
+      if (tempAmount < 0) {
+        tempAmount = 0;
+      }
+
+      return {
+        ...prevState,
+        bottles: {
+          ...prevState.bottles,
+          quantity: tempAmount,
+        },
+      };
+    });
+  }
+
+  function increaseBox() {
+    setCart((prevState) => {
+      let tempAmount = prevState.boxes.quantity + 1;
+
+      if (tempAmount > 9) {
+        tempAmount = 9;
+      }
+
+      return {
+        ...prevState,
+        boxes: {
+          ...prevState.boxes,
+          quantity: tempAmount,
+        },
+      };
+    });
+  }
+
+  function decreaseBox() {
+    setCart((prevState) => {
+      let tempAmount = prevState.boxes.quantity - 1;
+
+      if (tempAmount < 0) {
+        tempAmount = 0;
+      }
+
+      return {
+        ...prevState,
+        boxes: {
+          ...prevState.boxes,
+          quantity: tempAmount,
+        },
+      };
     });
   }
 
@@ -162,6 +249,10 @@ export const CartProvider = ({ children }: CartProviderInterface) => {
     totalItems,
     calcTotalSumPerProduct,
     updateCapacity,
+    increaseBottle,
+    increaseBox,
+    decreaseBottle,
+    decreaseBox,
   };
 
   return (
