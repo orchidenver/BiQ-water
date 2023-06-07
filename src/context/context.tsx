@@ -34,6 +34,8 @@ interface InitialStateInterface {
   increaseBox: () => void;
   decreaseBottle: () => void;
   decreaseBox: () => void;
+  changeLang: (e: React.MouseEvent<HTMLElement>) => void;
+  lang: string | null;
 }
 
 function getLocalStorage() {
@@ -74,10 +76,13 @@ const CartContext = createContext<InitialStateInterface>({
   increaseBox: () => {},
   decreaseBox: () => {},
   decreaseBottle: () => {},
+  changeLang: () => {},
+  lang: "ENG",
 });
 
-export const CartProvider = ({ children }: CartProviderInterface) => {
+export const AppProvider = ({ children }: CartProviderInterface) => {
   const [cart, setCart] = useState<CartInterface>(getLocalStorage());
+  const [lang, setLang] = useState<string | null>("ENG");
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
@@ -89,6 +94,11 @@ export const CartProvider = ({ children }: CartProviderInterface) => {
     updateOrder(cart.boxes.quantity, "boxes");
     calcTotalSumPerProduct("boxes");
   }, [cart.bottles.quantity, cart.boxes.quantity]);
+
+  function changeLang(e: React.MouseEvent<HTMLElement>) {
+    const newLang = (e.target as HTMLElement)?.textContent;
+    setLang(newLang);
+  }
 
   function resetOrder() {
     setCart({
@@ -253,6 +263,8 @@ export const CartProvider = ({ children }: CartProviderInterface) => {
     increaseBox,
     decreaseBottle,
     decreaseBox,
+    changeLang,
+    lang,
   };
 
   return (
@@ -260,6 +272,6 @@ export const CartProvider = ({ children }: CartProviderInterface) => {
   );
 };
 
-export const useCartContext = () => {
+export const useAppContext = () => {
   return useContext(CartContext);
 };

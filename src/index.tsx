@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import { CartProvider } from "./context/cartContext";
+import { AppProvider } from "./context/context";
 import MainPage from "./pages/MainPage";
 import Shop from "./pages/Shop";
 import Page404 from "./pages/Page404";
@@ -28,7 +28,6 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
-    errorElement: <Page404 />,
     children: [
       {
         path: "/",
@@ -46,6 +45,10 @@ const router = createBrowserRouter([
         path: "cookies",
         element: <Cookies />,
       },
+      {
+        path: "*",
+        element: <Page404 />,
+      },
     ],
   },
 ]);
@@ -55,9 +58,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <CartProvider>
+    <AppProvider>
       <RouterProvider router={router} />
-    </CartProvider>
+    </AppProvider>
   </React.StrictMode>
 );
 

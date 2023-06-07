@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import ImgComponent from "../components/ImgComponent";
 import Divider from "../components/Divider";
 import logo from "../assets/logo.jpg";
-import { useCartContext } from "../context/cartContext";
+import { useAppContext } from "../context/context";
 
 import "./Shop.css";
 
@@ -18,7 +18,7 @@ export default function Shop() {
     increaseBox,
     decreaseBox,
     decreaseBottle,
-  } = useCartContext();
+  } = useAppContext();
 
   return (
     <main>

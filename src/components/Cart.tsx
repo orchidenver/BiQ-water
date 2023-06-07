@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Divider from "./Divider";
-import { useCartContext } from "../context/cartContext";
+import { useAppContext } from "../context/context";
+import Modal from "./Modal";
 
 import bottleImg from "../assets/bottle-shop-small.jpg";
 import removeImg from "../assets/remove.svg";
@@ -38,7 +39,7 @@ export default function Cart({ open }: CartProps) {
     increaseBox,
     decreaseBox,
     decreaseBottle,
-  } = useCartContext();
+  } = useAppContext();
 
   return (
     <div className={open ? "sidebar active" : "sidebar"}>
@@ -133,6 +134,7 @@ export default function Cart({ open }: CartProps) {
           Checkout
         </button>
       </div>
+      <Modal />
     </div>
   );
 }

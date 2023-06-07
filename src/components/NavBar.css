@@ -10,7 +10,7 @@
 
 .navbar {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   width: 90%;
   height: 6vh;
@@ -25,12 +25,10 @@
 .navbar img {
   width: 10vw;
   height: 7vh;
+  margin: 0 auto 0 45%;
 }
 
 .cart {
-  position: absolute;
-  top: 1.5vh;
-  right: 4vw;
   border: transparent;
   background-color: transparent;
   cursor: pointer;
@@ -39,4 +37,45 @@
 .cart img {
   width: auto;
   height: 3vh;
+  margin-right: 40px;
+}
+
+.lang-menu {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  background-color: rgba(255, 255, 255, 0.801);
+  width: 25%;
+  height: 200%;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border-top-right-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 12;
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.21);
+}
+
+.lang {
+  font-family: "StolzlBook";
+  font-weight: 400;
+  font-size: 15px;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lang-btn {
+  position: absolute;
+  top: 28%;
+  left: 5%;
+  background-color: transparent;
+  border-color: transparent;
+  font-family: "StolzlBook";
+  font-weight: 400;
+  font-size: 15px;
 }
