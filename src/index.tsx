@@ -12,18 +12,27 @@ import Footer from "./components/Footer";
 import Policy from "./pages/Policy";
 import Cookies from "./pages/Cookies";
 import CookiesModal from "./components/CookiesModal";
+import MobileOnly from "./pages/MobileOnly";
 import { useCookies } from "react-cookie";
+import useMediaQuery from "./helpers";
 
 import "./fonts/nexa-heavy.ttf";
 
 function Layout() {
   const [cookies] = useCookies(["cookieConsent"]);
+  const matches = useMediaQuery("(max-width: 428px)");
   return (
     <>
-      <NavBar />
-      <Outlet />
-      <Footer />
-      {!cookies.cookieConsent && <CookiesModal />}
+      {matches ? (
+        <>
+          <NavBar />
+          <Outlet />
+          <Footer />
+          {!cookies.cookieConsent && <CookiesModal />}
+        </>
+      ) : (
+        <MobileOnly />
+      )}
     </>
   );
 }
