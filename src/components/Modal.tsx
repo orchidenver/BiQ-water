@@ -1,6 +1,9 @@
 import * as React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
+import { useNavigate } from "react-router";
+import { useAppContext } from "../context/context";
+
 import "./Modal.css";
 
 export interface ModalProps {
@@ -13,9 +16,26 @@ export default function Modal({ btnText, open, onClose }: ModalProps) {
   const [cartEmailValue, setCartEmailValue] = useState<
     string | number | readonly string[] | undefined
   >("");
+  const [success, setSuccess] = useState<boolean>(false);
+  const navigate = useNavigate();
+  const { openCart } = useAppContext();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setSuccess(false);
+      onClose();
+    }, 2000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [success]);
 
   function onSubmitHandler(e: React.FormEvent<HTMLFormElement>) {
     setCartEmailValue("");
+    navigate("/");
+    openCart();
+    setSuccess(true);
   }
 
   if (!open) return null;
@@ -29,25 +49,33 @@ export default function Modal({ btnText, open, onClose }: ModalProps) {
           and as soon as pure water flows into the bottles, we'll notify you
           first.
         </p>
-        {/* <button className="modal-btn" onClick={onClose}>
-          Stay tuned!
-        </button> */}
+        {success && (
+          <button className="modal-btn" onClick={onClose}>
+            Stay tuned!
+          </button>
+        )}
         <button className="modal-btn-close" onClick={onClose}>
           ╳
         </button>
-        <form className="modal-form" onSubmit={onSubmitHandler}>
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="modal-email"
-            placeholder="Enter your email"
-            value={cartEmailValue}
-            onChange={(e) => setCartEmailValue(e.target.value)}
-          />
-          <button className="send-btn" type="submit" disabled={!cartEmailValue}>
-            ᐳ
-          </button>
-        </form>
+        {!success && (
+          <form className="modal-form" onSubmit={onSubmitHandler}>
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              id="modal-email"
+              placeholder="Enter your email"
+              value={cartEmailValue}
+              onChange={(e) => setCartEmailValue(e.target.value)}
+            />
+            <button
+              className="send-btn"
+              type="submit"
+              disabled={!cartEmailValue}
+            >
+              ᐳ
+            </button>
+          </form>
+        )}
       </div>
     </>,
     document.getElementById("portal")!

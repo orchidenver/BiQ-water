@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Divider from "./Divider";
+import { Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import "./Footer.css";
 
@@ -58,7 +59,10 @@ export default function Footer() {
       <Divider color="#ffffff" margin="20px 0" />
       <p className="ref">BiQ © 2023</p>
       <p className="ref">All rights reserved.</p>
-      <p className="ref">Privacy Policy. Cookie Policy.</p>
+      <p className="footer-policy">
+        <Link to="policy">Privacy Policy.</Link>
+        <Link to="cookies">Cookie Policy.</Link>
+      </p>
     </footer>
   );
 }

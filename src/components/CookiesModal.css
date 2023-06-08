@@ -32,6 +32,7 @@
   font-weight: 400;
   font-size: 14px;
   padding: 0 15px;
+  line-height: 20px;
 }
 
 .cookies-btns {
@@ -39,6 +40,7 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  margin-top: 10px;
 }
 
 .cookies-btn {
@@ -60,11 +62,10 @@
 }
 
 .cookies-ref {
-  text-decoration: none;
   font-family: "StolzlLight";
   font-weight: 400;
-  font-size: 12px;
+  font-size: 14px;
   color: #152236;
   align-self: normal;
-  padding-left: 15px;
+  padding-left: 2px;
 }

@@ -97,3 +97,18 @@ input[type="submit"]:disabled {
   padding: 0;
   margin: 10px 0;
 }
+
+.footer-policy {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+a + a {
+  margin-left: 20px;
+}
+
+a {
+  color: #ffffff;
+}
