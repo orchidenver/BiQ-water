@@ -40,7 +40,7 @@ interface InitialStateInterface {
   openCart: () => void;
 }
 
-function getLocalStorage() {
+function getCartLocalStorage() {
   let cart = localStorage.getItem("cart");
 
   if (cart) {
@@ -66,7 +66,7 @@ function getLocalStorage() {
 }
 
 const CartContext = createContext<InitialStateInterface>({
-  cart: getLocalStorage(),
+  cart: getCartLocalStorage(),
   totalItems: 0,
   totalCartSum: 0,
   removeItem: (product: string) => {},
@@ -85,7 +85,7 @@ const CartContext = createContext<InitialStateInterface>({
 });
 
 export const AppProvider = ({ children }: CartProviderInterface) => {
-  const [cart, setCart] = useState<CartInterface>(getLocalStorage());
+  const [cart, setCart] = useState<CartInterface>(getCartLocalStorage());
   const [lang, setLang] = useState<string | null>("ENG");
   const [cartVisible, setCartVisible] = useState<boolean>(false);
 

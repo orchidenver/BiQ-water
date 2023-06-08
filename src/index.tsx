@@ -11,15 +11,19 @@ import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import Policy from "./pages/Policy";
 import Cookies from "./pages/Cookies";
+import CookiesModal from "./components/CookiesModal";
+import { useCookies } from "react-cookie";
 
 import "./fonts/nexa-heavy.ttf";
 
 function Layout() {
+  const [cookies] = useCookies(["cookieConsent"]);
   return (
     <>
       <NavBar />
       <Outlet />
       <Footer />
+      {!cookies.cookieConsent && <CookiesModal />}
     </>
   );
 }
