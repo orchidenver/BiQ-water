@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Cart from "./Cart";
 import { useAppContext } from "../context/context";
+import { Link } from "react-router-dom";
 import "./NavBar.css";
 import logo from "../assets/logo-small.svg";
 import shop from "../assets/shop.svg";
@@ -34,7 +35,9 @@ export default function NavBar(props: NavBar) {
             </div>
           </div>
         )}
-        <img src={logo} alt="logo" />
+        <Link to="/" className="navbar-logo">
+          <img src={logo} alt="logo" />
+        </Link>
         <button className="cart" onClick={openCart}>
           <img
             className="cart-img"

@@ -1,4 +1,5 @@
 import { useLocation } from "react-router-dom";
+import { useAppContext } from "../context/context";
 
 import Button from "./Button";
 import ImgComponent from "./ImgComponent";
@@ -16,6 +17,7 @@ import "./Banner.css";
 
 export default function Banner() {
   const location = useLocation();
+  const { lang } = useAppContext();
 
   const swiper: JSX.Element = (
     <Swiper
@@ -46,7 +48,7 @@ export default function Banner() {
       )}
       {location.pathname === "/shop" ? null : (
         <Button width="35vw" height={50} component="banner">
-          Buy now
+          {lang === "ENG" ? "Buy now" : "Kup teraz"}
         </Button>
       )}
     </aside>

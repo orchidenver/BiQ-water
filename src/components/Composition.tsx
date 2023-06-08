@@ -1,7 +1,11 @@
 import Divider from "./Divider";
+import { useAppContext } from "../context/context";
+
 import "./Composition.css";
 
 export default function Composition() {
+  const { lang } = useAppContext();
+
   const compositionEls: string[] = [
     "TDS mg/l",
     "550",
@@ -22,7 +26,7 @@ export default function Composition() {
     <>
       <div className="container">
         <div className="item item-bold" id="item-head">
-          Countries of origin
+          {lang === "ENG" ? "Countries of origin" : "Kraje pochodzenia"}
         </div>
         <div className="item">Serbia</div>
       </div>

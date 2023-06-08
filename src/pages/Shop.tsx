@@ -19,14 +19,15 @@ export default function Shop() {
     decreaseBox,
     decreaseBottle,
     openCart,
+    lang,
   } = useAppContext();
 
   return (
     <main>
       <Banner />
       <div className="shop">
-        <p className="shop-head">STILL</p>
-        <p className="shop-head">WATER</p>
+        <p className="shop-head">{lang === "ENG" ? "STILL" : "WODA"}</p>
+        <p className="shop-head">{lang === "ENG" ? "WATER" : "NIEGAZOWANA"}</p>
         <div className="capacity-btns">
           <button
             className={`${
@@ -73,7 +74,9 @@ export default function Shop() {
         </div>
         <div className="shop-items">
           <div className="shop-item">
-            <p className="shop-product">Bottle</p>
+            <p className="shop-product">
+              {lang == "ENG" ? "Bottle" : "Butelka"}
+            </p>
             <p className="shop-price">£1.6</p>
             <div className="shop-count">
               <button
@@ -96,7 +99,8 @@ export default function Shop() {
           <Divider color="#000000" margin="20px 0" />
           <div className="shop-item">
             <p className="shop-product">
-              Box <span>(6 pcs)</span>
+              {lang === "ENG" ? "Box" : "Opakowanie "}{" "}
+              <span>(6 {lang === "ENG" ? "pcs" : "szt."})</span>
             </p>
             <p className="shop-price">£9.6</p>
             <div className="shop-count">
@@ -121,7 +125,7 @@ export default function Shop() {
         <button className="cart-btn" onClick={openCart}>
           <div className="cart-btn-items">
             <span>{`£${totalCartSum.toFixed(1)}`}</span>
-            <span>Add to cart</span>
+            <span>{lang === "ENG" ? "Add to cart" : "Dodaj do koszyka"}</span>
           </div>
         </button>
       </div>
