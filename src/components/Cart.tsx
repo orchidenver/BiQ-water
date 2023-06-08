@@ -134,7 +134,6 @@ export default function Cart({ open }: CartProps) {
         <button
           className="checkout-btn"
           onClick={() => {
-            resetOrder();
             setOpenModal(true);
           }}
           disabled={bottles.quantity === 0 && boxes.quantity === 0}

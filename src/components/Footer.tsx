@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Divider from "./Divider";
 import { Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";
@@ -11,9 +11,21 @@ export default function Footer() {
   const [footerTextValue, setFooterTextValue] = useState<
     string | number | readonly string[] | undefined
   >("");
+  const [success, setSuccess] = useState<boolean>(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setSuccess(false);
+    }, 4000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [success]);
 
   function onSubmitHandler(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    setSuccess(true);
 
     // emailjs.sendForm(
     //   "YOUR_SERVICE_ID",
@@ -52,7 +64,17 @@ export default function Footer() {
           minLength={30}
           maxLength={100}
         ></textarea>
-        <input type="submit" value="Send" disabled={!enabled} />
+        <input
+          className={!success ? "" : "success"}
+          type="submit"
+          value={!success ? "Send" : "Your message has been sent"}
+          disabled={!enabled}
+          // style={{
+          //   backgroundColor: !success ? "#ffffff " : "#91979b",
+          //   color: !success ? "#91979b" : "#ffffff ",
+          //   borderColor: !success ? "transparent" : "#ffffff ",
+          // }}
+        />
       </form>
       <Divider color="#ffffff" margin="20px 0" />
       <p className="footer-head">Be quality water</p>

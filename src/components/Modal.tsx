@@ -18,13 +18,13 @@ export default function Modal({ btnText, open, onClose }: ModalProps) {
   >("");
   const [success, setSuccess] = useState<boolean>(false);
   const navigate = useNavigate();
-  const { openCart } = useAppContext();
+  const { openCart, resetOrder } = useAppContext();
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setSuccess(false);
       onClose();
-    }, 2000);
+    }, 4000);
 
     return () => {
       clearTimeout(timer);
@@ -33,6 +33,7 @@ export default function Modal({ btnText, open, onClose }: ModalProps) {
 
   function onSubmitHandler(e: React.FormEvent<HTMLFormElement>) {
     setCartEmailValue("");
+    resetOrder();
     navigate("/");
     openCart();
     setSuccess(true);
