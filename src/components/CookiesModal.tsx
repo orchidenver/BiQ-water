@@ -29,7 +29,7 @@ export default function CookiesModal() {
           ? "This website uses cookies to enhance your browsing experience and provide personalized services. By continuing to browse this site, you consent to the use of cookies in accordance with our Cookie Policy."
           : "Ta strona internetowa używa plików cookie w celu ulepszenia Twojego doświadczenia podczas przeglądania i świadczenia spersonalizowanych usług. Kontynuując korzystanie z tej strony, wyrażasz zgodę na używanie plików cookie zgodnie z naszą Polityką plików cookie. "}
         <Link className="cookies-ref" to="cookies">
-          {lang === "ENG" ? "Learn more" : "Ucz się więcej"}
+          {lang === "ENG" ? "Learn more" : "Czytaj więcejj"}
         </Link>
       </p>
       <div className="cookies-btns">

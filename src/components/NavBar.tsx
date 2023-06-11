@@ -4,8 +4,10 @@ import { useAppContext } from "../context/context";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
 import logo from "../assets/logo-small.svg";
+import logon from "../assets/Logo_BiQ-new.svg";
 import shop from "../assets/shop.svg";
 import close from "../assets/close.svg";
+import arrow from "../assets/arrow-down.svg";
 
 export interface NavBar {}
 
@@ -21,11 +23,11 @@ export default function NavBar(props: NavBar) {
   return (
     <div className="wrapper">
       <nav className="navbar">
-        {!menuOpen ? (
-          <button className="lang-btn" onClick={menuHandler}>
-            {lang}
-          </button>
-        ) : (
+        <div className="btn-block" onClick={menuHandler}>
+          <button className="lang-btn">{lang}</button>
+          <img className="arrow" src={arrow} alt="lang menu" />
+        </div>
+        {!menuOpen ? null : (
           <div className="lang-menu" onClick={menuHandler}>
             <div className="lang" onClick={(e) => changeLang(e)}>
               ENG
@@ -36,7 +38,7 @@ export default function NavBar(props: NavBar) {
           </div>
         )}
         <Link to="/" className="navbar-logo">
-          <img src={logo} alt="logo" />
+          <img src={logon} alt="logo" />
         </Link>
         <button className="cart" onClick={openCart}>
           <img
