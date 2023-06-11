@@ -1,8 +1,10 @@
 h1 {
   text-align: center;
-  width: 200px;
-  font-family: "StolzlBold";
+  width: 195px;
+  font-family: "NexaHeavy";
   font-weight: 900;
+  color: #152236;
+  margin-bottom: 0;
 }
 
 p {
@@ -24,7 +26,8 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 30px;
+  padding: 20px 15px 20px 15px;
+  font-family: "StolzlBook";
 }
 
 .product-info-block {
@@ -33,11 +36,12 @@ p {
 }
 
 .bold {
-  font-family: "StolzlBold";
+  font-family: "NexaHeavy";
   font-weight: 900;
+  color: #152236;
 }
 .gray {
-  font-family: "StolzlRegular";
+  font-family: "StolzlBook";
   font-weight: 400;
   color: #15223680;
 }
@@ -59,4 +63,9 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+ul {
+  padding-left: 15px;
+  margin: 0;
 }

@@ -22,9 +22,13 @@
   font-size: 30px;
 }
 
+.swiper-pagination-bullets {
+  margin-bottom: 15px;
+}
+
 .swiper-pagination-bullet {
-  width: 10px;
-  height: 10px;
+  width: 6px;
+  height: 6px;
   background: transparent;
   border: 2px solid #656769;
   border-radius: 50%;

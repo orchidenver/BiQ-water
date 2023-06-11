@@ -8,7 +8,7 @@ interface DividerProps {
 
 export default function Divider({ color, margin }: DividerProps) {
   return (
-    <hr
+    <div
       className="divider"
       style={{
         borderColor: `${color ? color : "#152236"}`,

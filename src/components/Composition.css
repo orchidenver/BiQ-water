@@ -19,12 +19,12 @@
 }
 
 .item {
-  font-family: "StolzlRegular";
+  font-family: "StolzlBook";
   font-weight: 400;
   color: #15223680;
 }
 
-.item + .item-bold:nth-child(odd) {
+.item + .item-compos:nth-child(odd) {
   font-family: "NexaHeavy";
   font-weight: 900;
   color: #152236;

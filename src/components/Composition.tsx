@@ -33,7 +33,7 @@ export default function Composition() {
       <Divider />
       <div className="container">
         {compositionEls.map((el: string, i: number) => (
-          <div className="item item-bold" key={el + i}>
+          <div className="item item-compos" key={el + i}>
             {el}
           </div>
         ))}

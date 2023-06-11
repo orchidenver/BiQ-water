@@ -14,6 +14,7 @@
   font-family: "NexaHeavy";
   font-weight: 900;
   line-height: 40px;
+  color: #152236;
 }
 
 .shop-item {
@@ -28,10 +29,12 @@
   width: 95px;
   margin: 0;
   padding: 0;
+  color: #152236;
 }
 
 .shop-price {
   margin: 0;
+  color: #152236;
 }
 
 .shop-product span {
@@ -43,6 +46,7 @@
   justify-content: space-between;
   align-items: center;
   width: 65px;
+  color: #152236;
 }
 
 .capacity-btns {
@@ -53,11 +57,12 @@
   width: 17vw;
   height: 30px;
   background-color: #ffffff;
-  border-color: #91979b;
-  color: #91979b;
+  border-color: #152236;
   border-radius: 72px;
   border-width: 1px;
   cursor: pointer;
+  color: #152236;
+  font-family: "StolzlBook";
 }
 
 .capacity-btn:hover,
@@ -73,14 +78,26 @@
 
 .amount-btn {
   background-color: #ffffff;
+  border-color: #152236;
   border-radius: 50%;
   border-width: 1px;
   height: 20px;
   width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+}
+
+.amount-btn.plus {
+  font-size: 22px;
+  font-family: "StolzlThin";
+  font-weight: 300;
 }
 
 .amount {
   color: #000000;
+  font-family: "StolzlBook";
   font-weight: normal;
   font-size: 16px;
   margin: 0 5px 0 5px;
@@ -95,7 +112,7 @@
   color: #ffffff;
   border-color: transparent;
   margin-top: 10px;
-  font-family: "StolzlRegular";
+  font-family: "StolzlBook";
   font-weight: 400;
   font-size: 18px;
   margin-top: 30px;
@@ -111,11 +128,14 @@
 
 .cart-btn-items {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  font-family: "StolzlBook";
+  padding: 0 15px;
 }
 
 .active {
-  background-color: #4a4d4f;
+  background-color: #91979b;
+  border: none;
   color: #ffffff;
 }

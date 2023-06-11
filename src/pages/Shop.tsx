@@ -84,12 +84,12 @@ export default function Shop() {
                 className="amount-btn"
                 onClick={decreaseBottle}
               >
-                -
+                —
               </button>
               <h2 className="amount">{bottles.quantity}</h2>
               <button
                 type="button"
-                className="amount-btn"
+                className="amount-btn plus"
                 onClick={increaseBottle}
               >
                 +
@@ -109,12 +109,12 @@ export default function Shop() {
                 className="amount-btn"
                 onClick={decreaseBox}
               >
-                -
+                —
               </button>
               <h2 className="amount">{boxes.quantity}</h2>
               <button
                 type="button"
-                className="amount-btn"
+                className="amount-btn plus"
                 onClick={increaseBox}
               >
                 +

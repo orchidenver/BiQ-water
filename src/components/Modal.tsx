@@ -57,7 +57,7 @@ export default function Modal({ btnText, open, onClose }: ModalProps) {
         </p>
         {success && (
           <button className="modal-btn" onClick={onClose}>
-            Stay tuned!
+            {lang === "ENG" ? "Stay tuned!" : "Bądźcie na bieżąco!"}
           </button>
         )}
         <button className="modal-btn-close" onClick={onClose}>

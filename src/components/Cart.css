@@ -77,8 +77,9 @@
 }
 
 .product-img {
-  height: 20vh;
+  height: 15vh;
   width: auto;
+  margin-left: 1vw;
 }
 
 .product-info {
@@ -125,6 +126,7 @@
   font-family: "StolzlRegular";
   font-weight: 400;
   color: #152236;
+  padding-right: 0;
 }
 
 .product-remove {
@@ -132,6 +134,8 @@
   border: transparent;
   height: 10vh;
   cursor: pointer;
+  padding-right: 0;
+  margin-left: 6vw;
 }
 
 .product-remove img {

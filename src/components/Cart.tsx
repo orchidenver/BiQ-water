@@ -4,6 +4,7 @@ import { useAppContext } from "../context/context";
 import Modal from "./Modal";
 
 import bottleImg from "../assets/bottle-shop-small.jpg";
+import boxImg from "../assets/box-shop-small.jpg";
 import removeImg from "../assets/remove.svg";
 
 import "./Cart.css";
@@ -95,7 +96,7 @@ export default function Cart({ open }: CartProps) {
       {boxes.quantity > 0 ? (
         <>
           <div className="product">
-            <img src={bottleImg} alt="product image" className="product-img" />
+            <img src={boxImg} alt="product image" className="product-img" />
             <div className="product-info">
               <div className="product-desc">
                 <p

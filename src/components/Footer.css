@@ -4,6 +4,7 @@
 }
 
 .ref {
+  font-family: "StolzlBook";
   text-align: center;
   padding: 0;
   margin: 0;
@@ -15,6 +16,8 @@
 h2 {
   color: #ffffff;
   margin: 0;
+  font-family: "NexaHeavy";
+  font-weight: 900;
 }
 
 form {
@@ -33,14 +36,15 @@ input[type="email"] {
   border-radius: 72px;
   padding: 0 20px 0 20px;
   color: #ffffff;
-  font-family: "StolzlLight";
+  font-family: "StolzlBook";
   font-weight: 300;
 }
 
 input[type="email"]::placeholder {
   color: #ffffff;
-  font-family: "StolzlLight";
-  font-weight: 300;
+  font-family: "StolzlBook";
+  font-weight: 400;
+  opacity: 0.5;
 }
 
 textarea {
@@ -50,15 +54,16 @@ textarea {
   padding: 20px;
   margin-bottom: 20px;
   color: #ffffff;
-  font-family: "StolzlLight";
+  font-family: "StolzlBook";
   font-weight: 300;
   resize: none;
 }
 
 textarea::placeholder {
   color: #ffffff;
-  font-family: "StolzlLight";
+  font-family: "StolzlBook";
   font-weight: 400;
+  opacity: 0.5;
 }
 
 input[type="submit"] {
@@ -68,7 +73,7 @@ input[type="submit"] {
   border-color: transparent;
   border-radius: 72px;
   cursor: pointer;
-  font-family: "StolzlRegular";
+  font-family: "StolzlBook";
   font-weight: 400;
   font-size: 18px;
 }
@@ -96,7 +101,7 @@ input[type="submit"]:disabled {
 }
 
 .footer-head {
-  font-family: "StolzlRegular";
+  font-family: "StolzlBook";
   font-weight: 400;
   font-size: 36px;
   color: #ffffff;
@@ -120,4 +125,5 @@ a + a {
 a {
   color: #ffffff;
   text-align: center;
+  font-family: "StolzlBook";
 }

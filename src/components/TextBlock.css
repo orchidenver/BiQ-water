@@ -3,27 +3,38 @@
   font-weight: 900;
   font-size: 22px;
   padding: 0px 15px;
+  color: #152236;
 }
 
 .text-block-paragraph {
-  font-family: "StolzlLight";
+  font-family: "StolzlBook";
   color: #152236;
   font-size: 14px;
   line-height: 22px;
   padding: 0 15px;
+  text-align: justify;
 }
 
 li {
-  font-family: "StolzlLight";
+  font-family: "StolzlBook";
   color: #152236;
   font-size: 14px;
   line-height: 22px;
+  text-align: justify;
 }
 
 .list-block-paragraph {
-  font-family: "StolzlLight";
+  font-family: "StolzlBook";
   color: #152236;
   font-size: 14px;
   line-height: 22px;
   padding: 0;
+}
+
+.list-block-paragraph:first-child {
+  margin-bottom: 0;
+}
+
+ul + .list-block-paragraph {
+  margin-top: 0;
 }

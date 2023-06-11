@@ -19,7 +19,13 @@ export default function MainPage() {
     <>
       <Banner />
       <div className="moto">
-        <h1>{lang === "ENG" ? "BE QUALITY WATER" : "BĄDŹ JAKOŚCIOWĄ WODĄ"}</h1>
+        <h1
+          style={{
+            width: lang === "ENG" ? 195 : 235,
+          }}
+        >
+          {lang === "ENG" ? "BE QUALITY WATER" : "BĄDŹ JAKOŚCIOWĄ WODĄ"}
+        </h1>
       </div>
       <ImgComponent link={promo} altText="promo" banner={false} />
       <Divider />
@@ -27,6 +33,7 @@ export default function MainPage() {
         header={
           lang === "ENG" ? "Distilled from nature" : "Destylowana z natury"
         }
+        element="DIV"
       >
         {
           <>
@@ -102,8 +109,8 @@ export default function MainPage() {
           </span>
           <span className="product-info-item gray">0.3/0.7/1L</span>
         </div>
-        <Button width="35vw" height={35}>
-          {lang === "ENG" ? "Add to cart" : "Dodaj do koszyka"}
+        <Button width="40vw" height={35}>
+          {lang === "ENG" ? "More info" : "Więcej informacji"}
         </Button>
       </div>
       <ImgComponent link={logo} altText="logo" banner={false} />

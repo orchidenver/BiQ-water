@@ -1,5 +1,5 @@
 .divider {
   text-align: center;
   margin: 20px 5vw 20px 5vw;
-  size: 1px;
+  border-top: 1px solid #152236;
 }
