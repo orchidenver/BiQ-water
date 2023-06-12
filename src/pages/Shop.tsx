@@ -19,6 +19,7 @@ export default function Shop() {
     decreaseBox,
     decreaseBottle,
     openCart,
+    changePrice,
     lang,
   } = useAppContext();
 
@@ -35,11 +36,12 @@ export default function Shop() {
                 ? "capacity-btn active"
                 : "capacity-btn"
             }`}
-            onClick={(e) =>
+            onClick={(e) => {
               updateCapacity(
                 (e.target as HTMLElement).textContent?.slice(0, -1)
-              )
-            }
+              );
+              changePrice((e.target as HTMLElement).textContent?.slice(0, -1)!);
+            }}
           >
             0.3L
           </button>
@@ -49,11 +51,12 @@ export default function Shop() {
                 ? "capacity-btn active"
                 : "capacity-btn"
             }`}
-            onClick={(e) =>
+            onClick={(e) => {
               updateCapacity(
                 (e.target as HTMLElement).textContent?.slice(0, -1)
-              )
-            }
+              );
+              changePrice((e.target as HTMLElement).textContent?.slice(0, -1)!);
+            }}
           >
             0.7L
           </button>
@@ -63,11 +66,12 @@ export default function Shop() {
                 ? "capacity-btn active"
                 : "capacity-btn"
             }`}
-            onClick={(e) =>
+            onClick={(e) => {
               updateCapacity(
                 (e.target as HTMLElement).textContent?.slice(0, -1)
-              )
-            }
+              );
+              changePrice((e.target as HTMLElement).textContent?.slice(0, -1)!);
+            }}
           >
             1.0L
           </button>
@@ -77,7 +81,10 @@ export default function Shop() {
             <p className="shop-product">
               {lang == "ENG" ? "Bottle" : "Butelka"}
             </p>
-            <p className="shop-price">£1.6</p>
+            <p className="shop-price">
+              {lang === "ENG" ? "£" : "zł"}
+              {bottles.price}
+            </p>
             <div className="shop-count">
               <button
                 type="button"
@@ -102,7 +109,10 @@ export default function Shop() {
               {lang === "ENG" ? "Box" : "Opakowanie "}{" "}
               <span>(6 {lang === "ENG" ? "pcs" : "szt."})</span>
             </p>
-            <p className="shop-price">£9.6</p>
+            <p className="shop-price">
+              {lang === "ENG" ? "£" : "zł"}
+              {boxes.price}
+            </p>
             <div className="shop-count">
               <button
                 type="button"
@@ -124,7 +134,9 @@ export default function Shop() {
         </div>
         <button className="cart-btn" onClick={openCart}>
           <div className="cart-btn-items">
-            <span>{`£${totalCartSum.toFixed(1)}`}</span>
+            <span>{`${lang === "ENG" ? "£" : "zł"}${totalCartSum.toFixed(
+              1
+            )}`}</span>
             <span>{lang === "ENG" ? "Add to cart" : "Dodaj do koszyka"}</span>
           </div>
         </button>

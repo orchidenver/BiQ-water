@@ -23,16 +23,10 @@ function Layout() {
   const matches = useMediaQuery("(max-width: 428px)");
   return (
     <>
-      {matches ? (
-        <>
-          <NavBar />
-          <Outlet />
-          <Footer />
-          {!cookies.cookieConsent && <CookiesModal />}
-        </>
-      ) : (
-        <MobileOnly />
-      )}
+      <NavBar />
+      <Outlet />
+      <Footer />
+      {!cookies.cookieConsent && <CookiesModal />}
     </>
   );
 }

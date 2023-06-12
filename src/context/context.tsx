@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState, useEffect, useMemo } from "react";
 
 interface CartProviderInterface {
   children: JSX.Element;
@@ -21,6 +21,23 @@ interface CartInterface {
   };
 }
 
+interface PricesInterface {
+  bottles: {
+    price: {
+      pl: {
+        [name: string]: number;
+      };
+    };
+  };
+  boxes: {
+    price: {
+      pl: {
+        [name: string]: number;
+      };
+    };
+  };
+}
+
 interface InitialStateInterface {
   cart: CartInterface;
   totalItems: number;
@@ -38,6 +55,7 @@ interface InitialStateInterface {
   lang: string | null;
   cartVisible: boolean;
   openCart: () => void;
+  changePrice: (price: string) => void;
 }
 
 function getCartLocalStorage() {
@@ -65,6 +83,27 @@ function getCartLocalStorage() {
   }
 }
 
+const prices: PricesInterface = {
+  bottles: {
+    price: {
+      pl: {
+        "0.3": 3.9,
+        "0.7": 6.7,
+        "1.0": 9.6,
+      },
+    },
+  },
+  boxes: {
+    price: {
+      pl: {
+        "0.3": 3.9 * 6,
+        "0.7": 6.7 * 6,
+        "1.0": 9.6 * 6,
+      },
+    },
+  },
+};
+
 const CartContext = createContext<InitialStateInterface>({
   cart: getCartLocalStorage(),
   totalItems: 0,
@@ -82,11 +121,12 @@ const CartContext = createContext<InitialStateInterface>({
   lang: "ENG",
   cartVisible: false,
   openCart: () => {},
+  changePrice: (price: string) => {},
 });
 
 export const AppProvider = ({ children }: CartProviderInterface) => {
   const [cart, setCart] = useState<CartInterface>(getCartLocalStorage());
-  const [lang, setLang] = useState<string | null>("ENG");
+  const [lang, setLang] = useState<string | null>("PL");
   const [cartVisible, setCartVisible] = useState<boolean>(false);
 
   useEffect(() => {
@@ -126,6 +166,15 @@ export const AppProvider = ({ children }: CartProviderInterface) => {
         totalSum: 0,
       },
     });
+  }
+
+  function changePrice(price: string) {
+    const { bottles, boxes } = prices;
+    const updatedCart: CartInterface = { ...cart };
+
+    updatedCart.bottles.price = Number(bottles.price.pl[price].toFixed(2));
+    updatedCart.boxes.price = Number(boxes.price.pl[price].toFixed(2));
+    return;
   }
 
   function increaseBottle() {
@@ -256,8 +305,17 @@ export const AppProvider = ({ children }: CartProviderInterface) => {
     return;
   }
 
-  const totalCartSum: number =
-    Number(cart.bottles.totalSum) + Number(cart.boxes.totalSum);
+  const totalCartSum = useMemo(() => {
+    return (
+      cart.bottles.price * cart.bottles.quantity +
+      cart.boxes.price * cart.boxes.quantity
+    );
+  }, [
+    cart.bottles.price,
+    cart.bottles.quantity,
+    cart.boxes.price,
+    cart.boxes.quantity,
+  ]);
 
   const context = {
     cart,
@@ -276,6 +334,7 @@ export const AppProvider = ({ children }: CartProviderInterface) => {
     lang,
     cartVisible,
     openCart,
+    changePrice,
   };
 
   return (
