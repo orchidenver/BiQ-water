@@ -79,7 +79,7 @@ export default function Cart({ open }: CartProps) {
               </div>
             </div>
             <div className="product-actions">
-              <p className="product-price">{`£${bottles.totalSum.toFixed(
+              <p className="product-price">{`zł${bottles.totalSum.toFixed(
                 1
               )}`}</p>
               <button
@@ -126,7 +126,9 @@ export default function Cart({ open }: CartProps) {
               </div>
             </div>
             <div className="product-actions">
-              <p className="product-price">{`£${boxes.totalSum.toFixed(1)}`}</p>
+              <p className="product-price">{`zł${boxes.totalSum.toFixed(
+                1
+              )}`}</p>
               <button
                 className="product-remove"
                 onClick={() => removeItem("boxes")}
@@ -141,7 +143,7 @@ export default function Cart({ open }: CartProps) {
       <div className="checkout">
         <div className="checkout-summary">{`${
           lang === "ENG" ? "Place an order" : "Złóż zamówienie"
-        } £${totalCartSum.toFixed(1)}`}</div>
+        } zł${totalCartSum.toFixed(1)}`}</div>
         <button
           className="checkout-btn"
           onClick={() => {

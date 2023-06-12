@@ -81,10 +81,7 @@ export default function Shop() {
             <p className="shop-product">
               {lang == "ENG" ? "Bottle" : "Butelka"}
             </p>
-            <p className="shop-price">
-              {lang === "ENG" ? "£" : "zł"}
-              {bottles.price}
-            </p>
+            <p className="shop-price">{`zł${bottles.price}`}</p>
             <div className="shop-count">
               <button
                 type="button"
@@ -109,10 +106,7 @@ export default function Shop() {
               {lang === "ENG" ? "Box" : "Opakowanie "}{" "}
               <span>(6 {lang === "ENG" ? "pcs" : "szt."})</span>
             </p>
-            <p className="shop-price">
-              {lang === "ENG" ? "£" : "zł"}
-              {boxes.price}
-            </p>
+            <p className="shop-price">{`zł${boxes.price}`}</p>
             <div className="shop-count">
               <button
                 type="button"
@@ -134,9 +128,7 @@ export default function Shop() {
         </div>
         <button className="cart-btn" onClick={openCart}>
           <div className="cart-btn-items">
-            <span>{`${lang === "ENG" ? "£" : "zł"}${totalCartSum.toFixed(
-              1
-            )}`}</span>
+            <span>{`zł${totalCartSum.toFixed(1)}`}</span>
             <span>{lang === "ENG" ? "Add to cart" : "Dodaj do koszyka"}</span>
           </div>
         </button>
