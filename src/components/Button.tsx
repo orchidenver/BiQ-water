@@ -7,6 +7,7 @@ interface ButtonInterface {
   width: number | string;
   height: number | string;
   component?: string;
+  fontSize?: number;
 }
 
 export default function Button({
@@ -14,12 +15,13 @@ export default function Button({
   width,
   component,
   height,
+  fontSize,
 }: ButtonInterface) {
   return (
     <Link
       to="shop"
-      className={`button ${component ? "button-banner" : null}`}
-      style={{ width: width, height: height }}
+      className={`button ${component ? "button-banner" : ""}`}
+      style={{ width, height, fontSize }}
     >
       {children}
     </Link>

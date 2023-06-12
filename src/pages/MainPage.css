@@ -5,6 +5,7 @@ h1 {
   font-weight: 900;
   color: #152236;
   margin-bottom: 0;
+  font-size: 40px;
 }
 
 p {
@@ -39,11 +40,13 @@ p {
   font-family: "NexaHeavy";
   font-weight: 900;
   color: #152236;
+  font-size: 20px;
 }
 .gray {
   font-family: "StolzlBook";
   font-weight: 400;
   color: #15223680;
+  font-size: 20px;
 }
 
 .btns {

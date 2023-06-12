@@ -1,9 +1,10 @@
 .text-block-header {
   font-family: "NexaHeavy";
   font-weight: 900;
-  font-size: 22px;
+  font-size: 24px;
   padding: 0px 15px;
   color: #152236;
+  margin-bottom: 15px;
 }
 
 .text-block-paragraph {
@@ -26,7 +27,7 @@ li {
 .list-block-paragraph {
   font-family: "StolzlBook";
   color: #152236;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 22px;
   padding: 0;
 }

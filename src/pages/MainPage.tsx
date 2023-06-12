@@ -21,7 +21,7 @@ export default function MainPage() {
       <div className="moto">
         <h1
           style={{
-            width: lang === "ENG" ? 195 : 235,
+            width: lang === "ENG" ? 195 : 290,
           }}
         >
           {lang === "ENG" ? "BE QUALITY WATER" : "BĄDŹ JAKOŚCIOWĄ WODĄ"}
@@ -104,12 +104,24 @@ export default function MainPage() {
       <ImgComponent link={productImg2} altText="water" banner={false} />
       <div className="product-section">
         <div className="product-info-block">
-          <span className="product-info-item bold">
+          <span
+            className="product-info-item bold"
+            style={{
+              fontSize: lang === "ENG" ? 20 : 16,
+            }}
+          >
             {lang === "ENG" ? "Still water" : "Woda niegazowana"}
           </span>
-          <span className="product-info-item gray">0.3/0.7/1L</span>
+          <span
+            className="product-info-item gray"
+            style={{
+              fontSize: lang === "ENG" ? 20 : 16,
+            }}
+          >
+            0.3/0.7/1L
+          </span>
         </div>
-        <Button width="40vw" height={35}>
+        <Button width="40vw" height={45} fontSize={lang === "ENG" ? 20 : 16}>
           {lang === "ENG" ? "More info" : "Więcej informacji"}
         </Button>
       </div>

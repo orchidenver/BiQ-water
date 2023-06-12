@@ -47,7 +47,7 @@ export default function Banner() {
         <ImgComponent link={bg} altText="banner" banner={true} />
       )}
       {location.pathname === "/shop" ? null : (
-        <Button width="35vw" height={50} component="banner">
+        <Button width="35vw" height={45} component="banner">
           {lang === "ENG" ? "Buy now" : "Kup teraz"}
         </Button>
       )}

@@ -1,6 +1,6 @@
 .footer {
   background-color: #91979b;
-  padding: 20px;
+  padding: 25px 20px 30px;
 }
 
 .ref {
@@ -18,6 +18,7 @@ h2 {
   margin: 0;
   font-family: "NexaHeavy";
   font-weight: 900;
+  font-size: 24px;
 }
 
 form {
@@ -45,6 +46,7 @@ input[type="email"]::placeholder {
   font-family: "StolzlBook";
   font-weight: 400;
   opacity: 0.5;
+  font-size: 13px;
 }
 
 textarea {
@@ -64,6 +66,7 @@ textarea::placeholder {
   font-family: "StolzlBook";
   font-weight: 400;
   opacity: 0.5;
+  font-size: 13px;
 }
 
 input[type="submit"] {

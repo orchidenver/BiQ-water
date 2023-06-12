@@ -1,7 +1,7 @@
 .button {
   background-color: #91979b;
   color: #ffffff;
-  height: 50px;
+  height: 45px;
   border-color: transparent;
   border-radius: 72px;
   cursor: pointer;
@@ -12,7 +12,7 @@
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .button:hover {

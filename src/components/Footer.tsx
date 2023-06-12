@@ -83,11 +83,6 @@ export default function Footer() {
               : "Wiadomość wysłana"
           }
           disabled={!enabled}
-          // style={{
-          //   backgroundColor: !success ? "#ffffff " : "#91979b",
-          //   color: !success ? "#91979b" : "#ffffff ",
-          //   borderColor: !success ? "transparent" : "#ffffff ",
-          // }}
         />
       </form>
       <Divider color="#ffffff" margin="20px 0" />
