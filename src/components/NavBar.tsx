@@ -45,6 +45,9 @@ export default function NavBar(props: NavBar) {
             className="cart-img"
             src={!cartVisible ? shop : close}
             alt="cart"
+            style={{
+              height: !cartVisible ? "3vh" : "2vh",
+            }}
           />
         </button>
       </nav>

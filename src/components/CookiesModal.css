@@ -3,7 +3,7 @@
   bottom: 4vw;
   left: 4vw;
   right: 4vw;
-  height: 35vh;
+  height: 40vh;
   width: 86vw;
   z-index: 17;
   border: 1px solid #152236;
@@ -40,12 +40,13 @@
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   margin-top: 10px;
+  padding: 0 15px;
 }
 
 .cookies-btn {
-  width: 35%;
+  width: 100%;
   height: 35px;
   border-color: #152236;
   background-color: #fff;

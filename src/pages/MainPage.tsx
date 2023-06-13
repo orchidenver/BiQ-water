@@ -121,7 +121,11 @@ export default function MainPage() {
             0.3/0.7/1L
           </span>
         </div>
-        <Button width="40vw" height={45} fontSize={lang === "ENG" ? 20 : 16}>
+        <Button
+          height={55}
+          fontSize={lang === "ENG" ? 20 : 16}
+          width={lang === "ENG" ? "40vw" : "45vw"}
+        >
           {lang === "ENG" ? "More info" : "Więcej informacji"}
         </Button>
       </div>

@@ -77,9 +77,12 @@
 }
 
 .product-img {
-  height: 15vh;
-  width: auto;
+  width: 100px;
   margin-left: 1vw;
+}
+
+.product-img.bottle {
+  height: 25vh;
 }
 
 .product-info {
@@ -163,13 +166,13 @@
   color: #ffffff;
   border-color: transparent;
   margin-top: 10px;
-  font-family: "StolzlRegular";
+  font-family: "StolzlBook";
   font-weight: 400;
   font-size: 18px;
 }
 
 .checkout-summary {
-  font-family: "StolzlRegular";
+  font-family: "Stolzl";
   font-weight: 400;
 }
 
