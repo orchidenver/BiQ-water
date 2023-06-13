@@ -110,7 +110,7 @@ export default function MainPage() {
               fontSize: lang === "ENG" ? 20 : 16,
             }}
           >
-            {lang === "ENG" ? "Still water" : "Woda niegazowana"}
+            {lang === "ENG" ? "Still water" : "Woda Bezgazowa"}
           </span>
           <span
             className="product-info-item gray"
@@ -122,11 +122,11 @@ export default function MainPage() {
           </span>
         </div>
         <Button
-          height={55}
+          height={50}
           fontSize={lang === "ENG" ? 20 : 16}
           width={lang === "ENG" ? "40vw" : "45vw"}
         >
-          {lang === "ENG" ? "More info" : "Więcej informacji"}
+          {lang === "ENG" ? "More info" : "Dodatkowo"}
         </Button>
       </div>
       <ImgComponent link={logo} altText="logo" banner={false} />

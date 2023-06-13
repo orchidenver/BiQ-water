@@ -49,11 +49,13 @@ export default function Cart({ open }: CartProps) {
       {bottles.quantity > 0 ? (
         <>
           <div className="product">
-            <img
-              src={bottleImg}
-              alt="product image"
-              className="product-img bottle"
-            />
+            <div className="img-container">
+              <img
+                src={bottleImg}
+                alt="product image"
+                className="product-img bottle"
+              />
+            </div>
             <div className="product-info">
               <div className="product-desc">
                 <p
@@ -85,7 +87,7 @@ export default function Cart({ open }: CartProps) {
             <div className="product-actions">
               <p className="product-price">{`${bottles.totalSum.toFixed(
                 1
-              )}zł`}</p>
+              )} zł`}</p>
               <button
                 className="product-remove"
                 onClick={() => removeItem("bottles")}
@@ -100,7 +102,9 @@ export default function Cart({ open }: CartProps) {
       {boxes.quantity > 0 ? (
         <>
           <div className="product">
-            <img src={boxImg} alt="product image" className="product-img" />
+            <div className="img-container">
+              <img src={boxImg} alt="product image" className="product-img" />
+            </div>
             <div className="product-info">
               <div className="product-desc">
                 <p
@@ -140,7 +144,7 @@ export default function Cart({ open }: CartProps) {
             <div className="product-actions">
               <p className="product-price">{`${boxes.totalSum.toFixed(
                 1
-              )}zł`}</p>
+              )} zł`}</p>
               <button
                 className="product-remove"
                 onClick={() => removeItem("boxes")}
@@ -155,7 +159,7 @@ export default function Cart({ open }: CartProps) {
       <div className="checkout">
         <div className="checkout-summary">{`${
           lang === "ENG" ? "Place an order" : "Złóż zamówienie"
-        } ${totalCartSum.toFixed(1)}zł`}</div>
+        } ${totalCartSum.toFixed(1)} zł`}</div>
         <button
           className="checkout-btn"
           onClick={() => {
