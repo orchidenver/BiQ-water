@@ -69,6 +69,7 @@
   color: #152236;
   font-family: "StolzlBook";
   font-size: 20px;
+  padding: 0;
 }
 
 .capacity-btn:hover,

@@ -131,6 +131,8 @@
   font-weight: 400;
   color: #152236;
   font-size: 20px;
+  padding: 0;
+  width: 25px;
 }
 
 .product-actions {
