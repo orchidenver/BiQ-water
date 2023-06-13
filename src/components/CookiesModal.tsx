@@ -17,9 +17,15 @@ export default function CookiesModal() {
   return createPortal(
     <aside className="cookies">
       <p className="cookies-header">
-        {lang === "ENG"
-          ? "Accept Cookies Notification"
-          : "Powiadomienie o akceptacji plików cookie"}
+        {lang === "ENG" ? (
+          "Accept Cookies Notification"
+        ) : (
+          <>
+            <span>Powiadomienie o akceptacji</span>
+            <br />
+            <span>plików cookie</span>
+          </>
+        )}
       </p>
       <p
         className="cookies-text"
@@ -33,13 +39,6 @@ export default function CookiesModal() {
         </Link>
       </p>
       <div className="cookies-btns">
-        <button
-          className="cookies-btn"
-          onClick={giveCookieConsent}
-          style={{ fontSize: lang === "ENG" ? "14px" : "12px" }}
-        >
-          {lang === "ENG" ? "Reject All" : "Odrzuć wszystkie"}
-        </button>
         <button
           className="cookies-btn color"
           onClick={giveCookieConsent}

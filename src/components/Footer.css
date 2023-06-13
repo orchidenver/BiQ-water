@@ -7,7 +7,7 @@
   font-family: "StolzlBook";
   text-align: center;
   padding: 0;
-  margin: 0;
+  margin: 5px 0 0;
   font-weight: 400;
   font-size: 12px;
   color: #ffffff;
@@ -116,17 +116,16 @@ input[type="submit"]:disabled {
 .footer-policy {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
   margin: 0;
   padding: 0;
   font-size: 12px;
-}
-
-a + a {
-  margin-left: 20px;
 }
 
 a {
   color: #ffffff;
   text-align: center;
   font-family: "StolzlBook";
+  margin-top: 5px;
 }

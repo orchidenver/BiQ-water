@@ -34,6 +34,8 @@ p {
 .product-info-block {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
+  height: 55px;
 }
 
 .bold {

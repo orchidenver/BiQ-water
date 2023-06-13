@@ -3,7 +3,7 @@ import Divider from "./Divider";
 import { useAppContext } from "../context/context";
 import Modal from "./Modal";
 
-import bottleImg from "../assets/bottle-shop-small.jpg";
+import bottleImg from "../assets/bottle-shop.jpg";
 import boxImg from "../assets/box-shop-small.jpg";
 import removeImg from "../assets/remove.svg";
 
@@ -49,12 +49,18 @@ export default function Cart({ open }: CartProps) {
       {bottles.quantity > 0 ? (
         <>
           <div className="product">
-            <img src={bottleImg} alt="product image" className="product-img" />
+            <div className="img-container">
+              <img
+                src={bottleImg}
+                alt="product image"
+                className="product-img bottle"
+              />
+            </div>
             <div className="product-info">
               <div className="product-desc">
                 <p
                   className="product-name"
-                  style={{ fontSize: lang === "ENG" ? "16px" : "11px" }}
+                  // style={{ fontSize: lang === "ENG" ? "16px" : "11px" }}
                 >
                   {lang === "ENG" ? "Bottle" : "Butelka"}
                 </p>
@@ -79,9 +85,9 @@ export default function Cart({ open }: CartProps) {
               </div>
             </div>
             <div className="product-actions">
-              <p className="product-price">{`zł${bottles.totalSum.toFixed(
+              <p className="product-price">{`${bottles.totalSum.toFixed(
                 1
-              )}`}</p>
+              )} zł`}</p>
               <button
                 className="product-remove"
                 onClick={() => removeItem("bottles")}
@@ -96,15 +102,25 @@ export default function Cart({ open }: CartProps) {
       {boxes.quantity > 0 ? (
         <>
           <div className="product">
-            <img src={boxImg} alt="product image" className="product-img" />
+            <div className="img-container">
+              <img src={boxImg} alt="product image" className="product-img" />
+            </div>
             <div className="product-info">
               <div className="product-desc">
                 <p
                   className="product-name"
-                  style={{ fontSize: lang === "ENG" ? "16px" : "11px" }}
-                >{`${lang === "ENG" ? "Box" : "Opakowanie"} (6 ${
-                  lang === "ENG" ? "pcs" : "szt."
-                })`}</p>
+                  // style={{ fontSize: lang === "ENG" ? "16px" : "11px" }}
+                >
+                  {lang === "ENG" ? (
+                    <span>Box 9pcs</span>
+                  ) : (
+                    <>
+                      <span>Opakowanie</span>
+                      <br />
+                      <span>9szt.</span>
+                    </>
+                  )}
+                </p>
                 <p className="product-capacity">{`${boxes.capacity}L`}</p>
               </div>
               <div className="product-quantity">
@@ -126,9 +142,9 @@ export default function Cart({ open }: CartProps) {
               </div>
             </div>
             <div className="product-actions">
-              <p className="product-price">{`zł${boxes.totalSum.toFixed(
+              <p className="product-price">{`${boxes.totalSum.toFixed(
                 1
-              )}`}</p>
+              )} zł`}</p>
               <button
                 className="product-remove"
                 onClick={() => removeItem("boxes")}
@@ -143,7 +159,7 @@ export default function Cart({ open }: CartProps) {
       <div className="checkout">
         <div className="checkout-summary">{`${
           lang === "ENG" ? "Place an order" : "Złóż zamówienie"
-        } zł${totalCartSum.toFixed(1)}`}</div>
+        } ${totalCartSum.toFixed(1)} zł`}</div>
         <button
           className="checkout-btn"
           onClick={() => {
