@@ -58,7 +58,7 @@
 
 .product {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   width: 100vw;
   height: 25vh;
@@ -68,12 +68,14 @@
 .product-name {
   font-family: "StolzlBold";
   font-weight: 900;
+  font-size: 20px;
 }
 
 .product-capacity {
   font-family: "StolzlRegular";
   font-weight: 400;
   color: #15223680;
+  font-size: 20px;
 }
 
 .product-img {
@@ -90,6 +92,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   height: 100%;
+  width: 167px;
 }
 
 .product-info p {
@@ -130,6 +133,7 @@
   font-weight: 400;
   color: #152236;
   padding-right: 0;
+  font-size: 20px;
 }
 
 .product-remove {
@@ -168,12 +172,13 @@
   margin-top: 10px;
   font-family: "StolzlBook";
   font-weight: 400;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .checkout-summary {
-  font-family: "Stolzl";
+  font-family: "StolzlBook";
   font-weight: 400;
+  font-size: 20px;
 }
 
 .checkout-btn:hover {
